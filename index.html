@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+
+    <input id="expressionInput" type="text">
+    <button onclick="appendText('+')">+</button>
+    <button onclick="appendText('-')">-</button>
+    <button onclick="appendText('*')">*</button>
+    <button onclick="appendText('/')">/</button>
+    <button onclick="appendText('^')">^</button>
+    <button onclick="appendText(')')">)</button>
+    <button onclick="appendText('sqrt(')">sqrt</button>
+    <button onclick="appendText('sin(')">sin</button>
+    <button onclick="appendText('cos(')">cos</button>
+    <button onclick="appendText('tan(')">tan</button>
+
+    <br><br>
+
+    <button onclick="appendText('pi')">pi</button>
+    <button onclick="appendText('e')">e</button>
+
+    <br><br>
+
+    <button onclick="evaluateExpression()">Calculate</button>
+    <button onclick="clearExpression()">Clear</button>
+
+    <br><br>
+
+    <h1>Output</h1>
+    <div id="outputDisplay"></div>
+
+    <br><br>
+
+    <h2>History</h2>
+    <ul id="historyList"></ul>
+
+    <script src="calculator.js"></script>
+</body>
+
+</html>
