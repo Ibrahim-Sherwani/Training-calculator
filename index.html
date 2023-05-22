@@ -9,21 +9,35 @@
     <h1>Calculator</h1>
 
     <input id="expressionInput" type="text">
-    <button onclick="appendText('+')">+</button>
-    <button onclick="appendText('-')">-</button>
-    <button onclick="appendText('*')">*</button>
-    <button onclick="appendText('/')">/</button>
-    <button onclick="appendText('^')">^</button>
-    <button onclick="appendText(')')">)</button>
-    <button onclick="appendText('sqrt(')">sqrt</button>
-    <button onclick="appendText('sin(')">sin</button>
-    <button onclick="appendText('cos(')">cos</button>
-    <button onclick="appendText('tan(')">tan</button>
-
     <br><br>
+    <div>
+        <button onclick="appendText('+')">+</button>
+        <button onclick="appendText('-')">-</button>
+        <button onclick="appendText('*')">*</button>
+        <button onclick="appendText('/')">/</button>
+        <button onclick="appendText('^')">^</button>
+        <button onclick="appendText(')')">)</button>
+        <button onclick="appendText('sqrt(')">sqrt</button>
+        <button onclick="appendText('sin(')">sin</button>
+        <button onclick="appendText('cos(')">cos</button>
+        <button onclick="appendText('tan(')">tan</button>
+        <br><br>
+        <button onclick="appendText('0')">0</button>
+        <button onclick="appendText('1')">1</button>
+        <button onclick="appendText('2')">2</button>
+        <button onclick="appendText('3')">3</button>
+        <button onclick="appendText('4')">4</button>
+        <button onclick="appendText('5')">5</button>
+        <button onclick="appendText('6')">6</button>
+        <button onclick="appendText('7')">7</button>
+        <button onclick="appendText('8')">8</button>
+        <button onclick="appendText('9')">9</button>
+        <br><br>
+        <button onclick="appendText('pi')">pi</button>
+        <button onclick="appendText('e')">e</button>
+    </div>
 
-    <button onclick="appendText('pi')">pi</button>
-    <button onclick="appendText('e')">e</button>
+
 
     <br><br>
 
@@ -34,8 +48,9 @@
 
     <h1>Variables</h1>
     <ul id="variableList"></ul>
-    <input id="variableKeyInput" type="text"> <input id="variableValueInput" type="text">
-    <button onclick="addVariables()">Add Variable</button>
+    <input id="variableKeyInput" type="text" placeholder="Variable Name"> <input id="variableValueInput" type="text"
+        placeholder="Variable Value">
+    <button onclick=" addVariables()">Add Variable</button>
     <div id="variableErrorOutputDisplay"></div>
 
     <br><br>
