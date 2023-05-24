@@ -12,7 +12,7 @@ function addToHistory(expression, result) {
     const historyList = document.getElementById('historyList')
     const listItem = document.createElement('li')
 
-    let buttonRemove = document.createElement('BUTTON');
+    const buttonRemove = document.createElement('BUTTON');
     buttonRemove.textContent = 'Remove'
 
     buttonRemove.addEventListener("click", function () {
@@ -72,7 +72,7 @@ function addVariables() {
         const variableList = document.getElementById('variableList')
         const listItem = document.createElement('li')
 
-        let buttonRemove = document.createElement('BUTTON');
+        const buttonRemove = document.createElement('BUTTON');
         buttonRemove.textContent = 'Remove'
 
         buttonRemove.addEventListener("click", function () {
@@ -241,8 +241,41 @@ function evaluateSimpleExpression(expression) {
     } else if (expression === 'e') {
         result = Math.E
     } else {
-
         result = parseFloat(expression)
+
+        if (isNaN(expression)) {
+            const index = expression.indexOf('e')
+            if (index != -1) {
+                if (isNaN(expression[index + 1])) {
+                    throw new Error('Invalid Expression')
+                }
+                if (index === 0) {
+                    expression = 'e*' + expression.slice(index)
+                }
+                else {
+                    expression = expression.slice(0, index) + '*' + expression.slice(index)
+                }
+            }
+            else {
+                const index = expression.indexOf('pi')
+                if (index != -1) {
+                    if (isNaN(expression[index + 2])) {
+                        throw new Error('Invalid Expression')
+                    }
+                    if (index === 0) {
+                        expression = 'pi*' + expression.slice(index + 2)
+                    }
+                    else {
+                        expression = expression.slice(0, index) + '*' + expression.slice(index)
+                    }
+                }
+                else {
+                    throw new Error('Invalid Expression')
+                }
+            }
+            result = evaluate(expression)
+        }
+
         if (isNaN(result)) {
             throw new Error('Invalid expression')
         }
